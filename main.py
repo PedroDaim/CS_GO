@@ -21,6 +21,11 @@ print("Columns of the Dataframe.")
 print(df_players.columns)
 print("\n" + "="*50 + "\n")
 
+#Display descriptive statistics of the dataframe
+print("Descriptive Statistics of the Dataframe.")       
+print(df_players.describe())
+print("\n" + "="*50 + "\n")
+
 #Display top 10 countries with the highest KD ratio
 top_10_countries = (
     df_players.groupby('country')['kd']
@@ -36,8 +41,8 @@ print("\n" + "="*50 + "\n")
 # Convert the pandas Series to a DataFrame for seaborn
 top_10_df = top_10_countries.reset_index(name='average_kd')
 
-# Create the bar plot using seaborn
-plt.figure(figsize=(10, 6))
+# Create the bar plot for the top_10_countries function using seaborn
+plt.figure(figsize=(12, 8))
 sns.barplot(x='average_kd', y='country', data=top_10_df, palette='viridis')
 plt.title('Top 10 Countries with Highest Average KD Ratio')
 plt.xlabel('Average Kill/Death Ratio')
