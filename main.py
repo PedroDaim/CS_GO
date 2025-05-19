@@ -55,3 +55,25 @@ print("Top 10 Players by KD Ratio.")
 print(top10_kd_players[['name', 'country', 'kd']])
 print("\n" + "="*50 + "\n")
 
+# Get the names of the top 10 rated players
+top_rated_names = set(top10_rated_players['name'])
+
+# Get the names of the top 10 KD players
+top_kd_names = set(top10_kd_players['name'])
+
+# Get the intersection of the two sets
+common_players = top_rated_names.intersection(top_kd_names) 
+print("Common Players in Top 10 Rated and Top 10 KD Players.")
+print(common_players)       
+print("\n" + "="*50 + "\n")
+
+# Find players unique to the top 10 rating list
+unique_to_rating = top_rated_names.difference(top_kd_names)
+print("Players in the Top 10 for Rating but not KD:")
+print(unique_to_rating)
+print("\n" + "="*50 + "\n")
+
+# Find players unique to the top 10 KD list
+unique_to_kd = top_kd_names.difference(top_rated_names)
+print("Players in the Top 10 for KD but not Rating:")
+print(unique_to_kd)
