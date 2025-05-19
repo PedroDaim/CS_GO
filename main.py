@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 #Import players and teams data and tranform the CSV files into pandas dataframes
-df_players = pd.read_csv('player_stats.csv')
-df_teams = pd.read_csv('team_stats.csv')
+df_players = pd.read_csv(r'data\player_stats.csv') 
+df_teams = pd.read_csv(r'data\team_stats.csv')
 
 #Display the first few rows of the dataframe df_players
 print("First Few Rows Of the Dataframe.")
